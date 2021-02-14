@@ -23,7 +23,7 @@ export default () => {
       <PopoverContent>
         <PopoverArrow />
         <PopoverCloseButton />
-        <PopoverHeader>Notifications</PopoverHeader>
+        <PopoverHeader><b>Notifications</b></PopoverHeader>
         <PopoverBody>
           <VStack
             divider={<StackDivider borderColor="gray.200" />}
@@ -31,10 +31,10 @@ export default () => {
             align="stretch"
           >
             <LinkOverlay href="#">
-              <Box> 1adfasfsfseff</Box>
+              <Box> Your Study pomodoro has been scheduled for Friday.</Box>
             </LinkOverlay>
-            <Box>2</Box>
-            <Box>3</Box>
+            <Box>Your Hackathon has been scheduled for tomorrow.</Box>
+            <Box>Your hackathon prize of 2500$ will be arriving in 2 weeks.</Box>
           </VStack>
         </PopoverBody>
       </PopoverContent>

@@ -5,9 +5,31 @@ import {
   Spacer,
   Box,
   Input,
+  useColorMode,
+  Button,
 } from "@chakra-ui/react";
-import { SearchIcon, EmailIcon, SettingsIcon } from "@chakra-ui/icons";
-
+import {
+  SearchIcon,
+ CalendarIcon,
+  SettingsIcon,
+  MoonIcon,
+  SunIcon,
+} from "@chakra-ui/icons";
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuIcon,
+  MenuCommand,
+  MenuDivider,
+} from "@chakra-ui/react"
+import SearchField from "react-search-field";
+import Calendar from './Calendar';
+import Data from "../Data";
 import Drawer from "./Drawer";
 import NotificationBar from "./NotificationBar";
 export default () => {
@@ -30,14 +52,29 @@ export default () => {
         <IconButton aria-label="Search database" icon={<SearchIcon />} m={2} />{" "}
         <Spacer />
         <NotificationBar />
-        <IconButton aria-label="Search database" icon={<EmailIcon />} m={2} />
+		<Menu>
+        <MenuButton as = {IconButton} aria-label="Search database" icon={<CalendarIcon />} m={2} />
+		<MenuList>
+		<MenuItem><Calendar /></MenuItem></MenuList>
+
+</Menu>
         <IconButton
           aria-label="Search database"
           icon={<SettingsIcon />}
           m={2}
         />
+        <ToggleDark />
       </Flex>
       <Flex></Flex>
     </>
   );
 };
+
+function ToggleDark() {
+  const { colorMode, toggleColorMode } = useColorMode();
+  return (
+    <Button onClick={toggleColorMode} m={2}>
+      {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+    </Button>
+  );
+}

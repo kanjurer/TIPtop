@@ -55,6 +55,17 @@ export default () => {
                     Incentives
                   </Link>
                 </Box>
+				 <Box>
+                  <Link to="/stickynotes" onClick={onClose}>
+                    Sticky Notes
+                  </Link>
+                </Box>
+		
+				 <Box>
+                  <Link to="/destress" onClick={onClose}>
+                    Destress
+                  </Link>
+                </Box>
               </VStack>
             </DrawerBody>
           </DrawerContent>

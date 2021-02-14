@@ -5,6 +5,11 @@ import NavBar from "./components/NavBar";
 import Timeline from "./components/Timeline";
 import Incentives from "./components/Incentives";
 import Projects from "./components/Projects";
+import Calendar from "./components/Calendar";
+
+import theme from "./theme";
+import Destress from "./components/Destress";
+import StickyNotes from "./components/StickyNotes";
 
 export function Main() {
   return (
@@ -29,6 +34,13 @@ export function Main() {
           <Route path="/projects" exact>
             <Projects />
           </Route>
+
+          <Route path="/destress" exact>
+            <Destress />
+          </Route>
+          <Route path="/stickynotes" exact>
+            <StickyNotes />
+          </Route>
         </Switch>
       </Router>
     </>
@@ -37,7 +49,7 @@ export function Main() {
 
 export default function App() {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <Main />
     </ChakraProvider>
   );
