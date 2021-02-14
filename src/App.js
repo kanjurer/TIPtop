@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { ChakraProvider, SimpleGrid, Box } from "@chakra-ui/react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-function App() {
+import NavBar from "./components/NavBar";
+import Timeline from "./components/Timeline";
+import Incentives from "./components/Incentives";
+import Projects from "./components/Projects";
+
+export function Main() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {" "}
+      <Router>
+        <NavBar />
+
+        <Switch>
+          <Route path="/" exact>
+            <SimpleGrid columns={2} spacing={10}>
+              <Box>
+                {" "}
+                <Timeline />
+              </Box>
+              <Box> </Box>
+            </SimpleGrid>
+          </Route>
+          <Route path="/incentives" exact>
+            <Incentives />
+          </Route>
+          <Route path="/projects" exact>
+            <Projects />
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <ChakraProvider>
+      <Main />
+    </ChakraProvider>
+  );
+}
