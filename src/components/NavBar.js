@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import {
   SearchIcon,
- CalendarIcon,
+  CalendarIcon,
   SettingsIcon,
   MoonIcon,
   SunIcon,
@@ -26,9 +26,9 @@ import {
   MenuIcon,
   MenuCommand,
   MenuDivider,
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";
 import SearchField from "react-search-field";
-import Calendar from './Calendar';
+import Calendar from "./Calendar";
 import Data from "../Data";
 import Drawer from "./Drawer";
 import NotificationBar from "./NotificationBar";
@@ -41,7 +41,7 @@ export default () => {
         </Box>
         <Box p="2">
           <Heading m={2} size="md">
-            App
+            T.I.P
           </Heading>
         </Box>
         <Spacer />
@@ -52,12 +52,19 @@ export default () => {
         <IconButton aria-label="Search database" icon={<SearchIcon />} m={2} />{" "}
         <Spacer />
         <NotificationBar />
-		<Menu>
-        <MenuButton as = {IconButton} aria-label="Search database" icon={<CalendarIcon />} m={2} />
-		<MenuList>
-		<MenuItem><Calendar /></MenuItem></MenuList>
-
-</Menu>
+        <Menu bg={"black"}>
+          <MenuButton
+            as={IconButton}
+            aria-label="Search database"
+            icon={<CalendarIcon />}
+            m={2}
+          />
+          <MenuList>
+            <MenuItem>
+              <Calendar />
+            </MenuItem>
+          </MenuList>
+        </Menu>
         <IconButton
           aria-label="Search database"
           icon={<SettingsIcon />}

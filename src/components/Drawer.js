@@ -33,7 +33,7 @@ export default () => {
       <Drawer placement="left" onClose={onClose} isOpen={isOpen} size="xs">
         <DrawerOverlay>
           <DrawerContent>
-            <DrawerHeader>App</DrawerHeader>
+            <DrawerHeader>Task Intensive Pomodoro</DrawerHeader>
             <DrawerBody>
               <VStack
                 divider={<StackDivider borderColor="gray.200" />}

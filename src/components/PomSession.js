@@ -28,15 +28,12 @@ export default function PomSession(props) {
         duration={rest ? data[1] * 60 : data[0] * 60}
         key={rest ? data[1] * 60 : data[0] * 60}
         colors={[
-          ["#004777", 0.33],
+          ["#FFC0CB", 0.33],
           ["#F7B801", 0.33],
           ["#A30000", 0.33],
         ]}
         onComplete={() => {
           setRest(!rest);
-          if (!rest) {
-            setData(data[3] - 1);
-          }
         }}
       >
         {({ remainingTime }) => {
@@ -132,7 +129,6 @@ export default function PomSession(props) {
           >
             {playing ? "Pause" : "Start"}
           </Button>
- 
         </Box>
       </FormControl>
     </Container>

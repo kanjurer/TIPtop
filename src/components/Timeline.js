@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Grid, Heading } from "@chakra-ui/react";
+import { Grid, Heading, Container } from "@chakra-ui/react";
 
 import {
   Box,
@@ -28,25 +28,27 @@ export default () => {
         Timeline
       </Heading>{" "}
       <br />
-      <Grid templateColumns="repeat(2, 1fr)" gap={700} m={2} p={2}>
-        <Grid templateColumns="repeat(1, 1fr)" gap={4} m={2} p={2}>
-          {data.map((item) => {
-            return (
-              <PomPrompt
-                title={item.title}
-                desc={item.desc}
-                progress={item.progress}
-                priority={item.priority}
-                pomodoroTimeDone={item.pomodoroTimeDone}
-                pomodoroSessionsDone={item.pomodoroSessionsDone}
-                setPreview={setPreview}
-                setPreviewTag={setPreviewTag}
-              />
-            );
-          })}
+      <Container>
+        <Grid templateColumns="repeat(2, 1fr)" gap={700} m={2} p={2}>
+          <Grid templateColumns="repeat(1, 1fr)" gap={4} m={2} p={2}>
+            {data.map((item) => {
+              return (
+                <PomPrompt
+                  title={item.title}
+                  desc={item.desc}
+                  progress={item.progress}
+                  priority={item.priority}
+                  pomodoroTimeDone={item.pomodoroTimeDone}
+                  pomodoroSessionsDone={item.pomodoroSessionsDone}
+                  setPreview={setPreview}
+                  setPreviewTag={setPreviewTag}
+                />
+              );
+            })}
+          </Grid>
+          {preview ? previewTag : null}
         </Grid>
-        {preview ? previewTag : null}
-      </Grid>
+      </Container>
     </>
   );
 };

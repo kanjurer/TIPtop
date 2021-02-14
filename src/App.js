@@ -13,7 +13,7 @@ import StickyNotes from "./components/StickyNotes";
 
 export function Main() {
   return (
-    <>
+    <Box style={{backgroundImage: '/minimalist.jpg'}}>
       {" "}
       <Router>
         <NavBar />
@@ -43,7 +43,7 @@ export function Main() {
           </Route>
         </Switch>
       </Router>
-    </>
+    </Box>
   );
 }
 
