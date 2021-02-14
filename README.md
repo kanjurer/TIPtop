@@ -1,3 +1,14 @@
+Calgary Hacks 2021 Entry
+
+Group 30: "Team-fifty-three"
+
+available at yeetvictory.herokuapp.com
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
